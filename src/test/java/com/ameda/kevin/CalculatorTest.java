@@ -1,5 +1,6 @@
 package com.ameda.kevin;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /*
@@ -9,8 +10,10 @@ public class CalculatorTest{
 
 
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void testAdd() {
-        throw new RuntimeException("Oops");
+        Assert.fail("failing your one and only one test");
     }
+
+
 }
