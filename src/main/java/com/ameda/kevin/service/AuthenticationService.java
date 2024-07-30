@@ -14,6 +14,9 @@ public class AuthenticationService {
 
     private UserRepository repository;
 
+    public AuthenticationService(UserRepository repository) {
+        this.repository = repository;
+    }
     public boolean authenticate(String username, String password){
         User user = repository.findByUserName(username);
         return user.getPassword().equals(password);
