@@ -17,8 +17,12 @@ public class UserRepository {
     private Map<String, User> users = new HashMap<>();
 
     public UserRepository() {
-        users.put("kevin", new User("kevin","ameda"));
-        users.put("judith",new User("judith","mongare"));
+        //regular users
+        users.put("Peninah",User.createRegularUser("Peninah","muiruri"));
+        users.put("Paul",User.createRegularUser("Paul","muiruri"));
+        //admin users
+        users.put("judith",User.createAdminUser("judith","mongare"));
+        users.put("kevin",User.createAdminUser("kevin","ameda"));
     }
 
     public User findByUserName(String username){

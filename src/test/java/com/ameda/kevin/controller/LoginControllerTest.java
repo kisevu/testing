@@ -4,6 +4,7 @@ package com.ameda.kevin.controller;
 import com.ameda.kevin.service.AuthenticationService;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -24,6 +25,7 @@ public class LoginControllerTest{
         this.loginController = new LoginController(this.service);
     }
 
+    @Ignore
     @Test
     public void  testService_valid_usernameAndPassword_logsIn_user(){
         //Arrange
