@@ -26,8 +26,16 @@ public class AuthenticationService {
     }
 
     public Set<User> getRegularUsers(){
+        return  findUserByUserType(User.UserType.REGULAR_USER);
+    }
+
+    public Set<User> getAdminUsers(){
+        return findUserByUserType(User.UserType.ADMIN_USER);
+    }
+
+    private Set<User> findUserByUserType(User.UserType userType){
         return  repository.findAll().stream()
-                .filter(user -> user.isLive() && user.getUserType() == User.UserType.REGULAR_USER)
+                .filter(user -> user.isLive() && user.getUserType() == userType)
                 .collect(Collectors.toSet());
     }
 }
