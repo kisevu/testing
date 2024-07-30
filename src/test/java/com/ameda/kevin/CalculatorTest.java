@@ -1,5 +1,6 @@
 package com.ameda.kevin;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,6 +12,12 @@ import static org.junit.Assert.*;
 
 public class CalculatorTest{
 
+    private Calculator calc;
+
+    @Before
+    public void setUp(){
+        calc = new Calculator();
+    }
     //Arrange (setup)
     // Act (SUT)
     // Assert (few assertions) framework
@@ -20,7 +27,7 @@ public class CalculatorTest{
         //Arrange
         int a=100, b =50;
         //Act
-        int result = Calculator.add(a,b);
+        int result = calc.add(a,b);
         //Assert
         assertEquals(150,result);
     }
