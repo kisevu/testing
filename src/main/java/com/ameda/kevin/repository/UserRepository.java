@@ -10,6 +10,8 @@ package com.ameda.kevin.repository;
 import com.ameda.kevin.entity.User;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class UserRepository {
@@ -28,4 +30,9 @@ public class UserRepository {
     public User findByUserName(String username){
      return  users.get(username);
     }
+
+    public List<User> findAll(){
+        return new LinkedList<>(users.values());
+    }
+
 }
